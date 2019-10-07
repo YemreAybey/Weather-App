@@ -18,7 +18,8 @@ A simple Weather application which shows the weather for any city.
 
 ## Getting started
 
-To get started with the app, clone the repo
+To get started with the app, clone the repo 
+or just go here ==> [WeatherApp](https://yemreaybey.github.io/Weather-App/)
 
 ```
 git clone => The SSH key or URL <=
