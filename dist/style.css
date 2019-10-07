@@ -1,0 +1,89 @@
+.app-view {
+  width: 400px;
+  height: 100vh;
+}
+.outer {
+  width: 800px;
+  height: 100%;
+}
+.show-degree {
+  font-family: 'Notable', sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+}
+.notable {
+  font-family: 'Notable', sans-serif;
+}
+.h6 {
+  margin-top: -5px;
+}
+.p-3.view {
+  background-color: #886ba2;
+}
+.shoulders {
+  font-family: 'Big Shoulders Text', cursive;
+}
+
+.today-info {
+  background-color: #7d73c7;
+}
+.fa-map-marker-alt {
+  color: #c0d438;
+}
+.row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+.col-3 {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+input {
+  margin: 10px auto;
+  width: 300px;
+  display: block;
+  border-radius: 10px;
+  color: #ebebeb99;
+  text-align: center;
+  background-image: linear-gradient(#6c6698, #3b3165 50%, #6c6792);
+}
+input:focus {
+  outline: none;
+}
+
+.text-sec {
+  color: #a6c6e2;
+}
+.text-dr {
+  color: #333b42;
+}
+
+.modal-window {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.modal-content {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 0rem 0rem 1rem 1rem;
+  width: 24rem;
+  border-radius: 0.5rem;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}

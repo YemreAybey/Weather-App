@@ -42,7 +42,7 @@ Run
 npx webpack --watch
 ```
 
-open dist/index.html file on your browser and start to create projects and tasks.
+open dist/index.html file on your browser and search for a city.
 
 # Authors
 
