@@ -1,6 +1,6 @@
 /* eslint-env browser */
 import { format } from 'date-fns';
-import { days, wetSymbls } from '../api/weatherApi';
+import { days, wetSymbls, fAnC } from '../api/weatherApi';
 
 const getSymColor = status => {
   if (status == 'Sunny') {
@@ -64,4 +64,29 @@ const renderOtherDays = (status, temp, order, plus) => {
   );
 };
 
-export { renderToday, renderOtherDays };
+const changeTemp = e => {
+  const tdTemp = document.querySelector('.show-degree');
+  const today1 = document.querySelector('.firstTemp');
+  const today2 = document.querySelector('.secondTemp');
+  const today3 = document.querySelector('.thirdTemp');
+  const today4 = document.querySelector('.fourthTemp');
+
+  if (e.target.id == 'F') {
+    tdTemp.innerHTML = `${fAnC['today'][1]} °F`;
+    today1.innerHTML = `${fAnC['today1'][1]} °F`;
+    today2.innerHTML = `${fAnC['today2'][1]} °F`;
+    today3.innerHTML = `${fAnC['today3'][1]} °F`;
+    today4.innerHTML = `${fAnC['today4'][1]} °F`;
+    e.target.innerHTML = 'To °C';
+    e.target.id = 'C';
+  } else {
+    tdTemp.innerHTML = `${fAnC['today'][0]} °C`;
+    today1.innerHTML = `${fAnC['today1'][0]} °C`;
+    today2.innerHTML = `${fAnC['today2'][0]} °C`;
+    today3.innerHTML = `${fAnC['today3'][0]} °C`;
+    today4.innerHTML = `${fAnC['today4'][0]} °C`;
+    e.target.innerHTML = 'To °F';
+    e.target.id = 'F';
+  }
+};
+export { renderToday, renderOtherDays, changeTemp };

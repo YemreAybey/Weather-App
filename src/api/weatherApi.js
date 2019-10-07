@@ -10,6 +10,7 @@ const wetSymbls = {
   Misty: 'fa-smog',
   Extreme: 'fa-cloud-showers-heavy'
 };
+const fAnC = [];
 const getFormattedStatus = status => {
   let currentStatus = status.toLowerCase();
 
@@ -45,6 +46,14 @@ const KtoC = degree => {
   return parseInt(degree - 273.15, 10);
 };
 
+const CtoF = degree => {
+  return parseInt(degree * (9 / 5) + 32, 10);
+};
+
+const FtoC = degree => {
+  return parseInt((degree - 32) * (5 / 9), 10);
+};
+
 const decideData = date => {
   let theHour = getHours(date);
   while (theHour % 3 != 0) {
@@ -56,14 +65,14 @@ const decideData = date => {
 
 const getWeather = name => {
   fetch(
-    `http://api.openweathermap.org/data/2.5/weather?q=${name.toUpperCase()}&APPID=0f695179f8524df704f661f75ece5bb7`,
+    `https://api.openweathermap.org/data/2.5/weather?q=${name.toUpperCase()}&APPID=0f695179f8524df704f661f75ece5bb7`,
     { mode: 'cors' }
   )
     .then(response => {
       return response.json();
     })
     .then(weather => {
-      console.log(weather);
+      fAnC['today'] = [KtoC(weather.main.temp), CtoF(KtoC(weather.main.temp))];
       renderToday(
         `${KtoC(weather.main.temp)} °C`,
         getFormattedStatus(weather.weather[0].main),
@@ -81,14 +90,15 @@ const getWeather = name => {
 
 const getForecast = name => {
   fetch(
-    `http://api.openweathermap.org/data/2.5/forecast?q=${name.toUpperCase()}&APPID=0f695179f8524df704f661f75ece5bb7`,
+    `https://api.openweathermap.org/data/2.5/forecast?q=${name.toUpperCase()}&APPID=0f695179f8524df704f661f75ece5bb7`,
     { mode: 'cors' }
   )
     .then(response => {
       return response.json();
     })
     .then(foreCast => {
-      console.log(foreCast);
+      const today1 = KtoC(foreCast.list[decideData(new Date())[0]].main.temp);
+      fAnC['today1'] = [today1, CtoF(today1)];
       renderOtherDays(
         getFormattedStatus(
           foreCast.list[decideData(new Date())[0]].weather[0].main
@@ -97,7 +107,8 @@ const getForecast = name => {
         'first',
         1
       );
-      console.log(foreCast.list[decideData(new Date())[1]].weather[0].main);
+      const today2 = KtoC(foreCast.list[decideData(new Date())[1]].main.temp);
+      fAnC['today2'] = [today2, CtoF(today2)];
       renderOtherDays(
         getFormattedStatus(
           foreCast.list[decideData(new Date())[1]].weather[0].main
@@ -106,7 +117,8 @@ const getForecast = name => {
         'second',
         2
       );
-
+      const today3 = KtoC(foreCast.list[decideData(new Date())[2]].main.temp);
+      fAnC['today3'] = [today3, CtoF(today3)];
       renderOtherDays(
         getFormattedStatus(
           foreCast.list[decideData(new Date())[2]].weather[0].main
@@ -115,7 +127,8 @@ const getForecast = name => {
         'third',
         3
       );
-
+      const today4 = KtoC(foreCast.list[decideData(new Date())[3]].main.temp);
+      fAnC['today4'] = [today4, CtoF(today4)];
       renderOtherDays(
         getFormattedStatus(
           foreCast.list[decideData(new Date())[3]].weather[0].main
@@ -128,18 +141,12 @@ const getForecast = name => {
     .catch(e => {});
 };
 
-const getData = async name => {
-  const weatherData = await getWeather(name);
-  const foreCastData = await getForecast(name);
-  return [weatherData, foreCastData];
-};
-
 export {
   getWeather,
-  getData,
   days,
   wetSymbls,
   getForecast,
   getFormattedStatus,
-  modal
+  modal,
+  fAnC
 };
