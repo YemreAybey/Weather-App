@@ -28,19 +28,31 @@
     ></script>
   </head>
   <body class="bg-dark">
+    <div class="d-none modal-window">
+      <div class="modal-content w-50">
+        <div class="w-100">
+          <button
+            class="btn btn-secondary btn-sm float-right closing d-flex justify-content-center"
+          >
+            X
+          </button>
+        </div>
+        <h2 class="text-center">No Information For This Input!</h2>
+      </div>
+    </div>
     <div class="outer mx-auto d-flex align-items-center justify-content-center">
       <div class="app-view bg-secondary">
         <div class="p-3 view">
           <div class="float-right">
-            <span class="h1 text-white">Thursday</span>
+            <span class="h1 text-white dayArea">Thursday</span>
             <span class="d-block h6 notable text-white text-right"
               >3 Oct 2019</span
             >
-            <span class="d-block text-small text-white text-right"
+            <span class="d-block text-small text-white text-right city"
               >Istanbul TR <i class="fas fa-map-marker-alt"></i
             ></span>
           </div>
-          <i class="fas fa-sun fa-5x text-warning"></i>
+          <i class="bigSymb"></i>
           <div class="degree mt-3">
             <span class="show-degree text-white">23°C</span>
             <span class="show-degree text-white d-block">SUNNY</span>
@@ -48,63 +60,63 @@
         </div>
         <div class="d-flex flex-column p-5 text-white shoulders today-info">
           <div class="px-3">
-            <span>HUMIDITY</span><span class="ml-3 float-right">20%</span>
+            <span>HUMIDITY</span
+            ><span class="ml-3 float-right humidity">20%</span>
           </div>
           <div class="px-3">
-            <span>RAIN PROBABILITY</span
-            ><span class="ml-3 float-right">Low</span>
-          </div>
-          <div class="px-3">
-            <span>WIND</span><span class="ml-3 float-right">2km/h</span>
+            <span>WIND</span><span class="ml-3 float-right wind">2km/h</span>
           </div>
         </div>
         <div class="row">
           <div class="col-3">
             <div class="card">
               <div class="d-flex align-items-center justify-content-center">
-                <i class="fas fa-sun fa-3x text-warning mt-2"></i>
+                <i class="mt-2 firstDay"></i>
               </div>
               <div class="card-body">
-                <h4 class="card-title text-center notable">Fri</h4>
-                <h5 class="shoulders text-center">16°C</h5>
+                <h4 class="card-title text-center notable firstName">Fri</h4>
+                <h5 class="shoulders text-center firstTemp">16°C</h5>
               </div>
             </div>
           </div>
           <div class="col-3">
             <div class="card">
               <div class="d-flex align-items-center justify-content-center">
-                <i class="fas fa-sun fa-3x text-warning mt-2"></i>
+                <i class="secondDay mt-2"></i>
               </div>
               <div class="card-body">
-                <h4 class="card-title text-center notable">Fri</h4>
-                <h5 class="shoulders text-center">16°C</h5>
+                <h4 class="card-title text-center notable secondName">Fri</h4>
+                <h5 class="shoulders text-center secondTemp">16°C</h5>
               </div>
             </div>
           </div>
           <div class="col-3">
             <div class="card">
               <div class="d-flex align-items-center justify-content-center">
-                <i class="fas fa-sun fa-3x text-warning mt-2"></i>
+                <i class="thirdDay mt-2"></i>
               </div>
               <div class="card-body">
-                <h4 class="card-title text-center notable">Fri</h4>
-                <h5 class="shoulders text-center">16°C</h5>
+                <h4 class="card-title text-center notable thirdName">Fri</h4>
+                <h5 class="shoulders text-center thirdTemp">16°C</h5>
               </div>
             </div>
           </div>
           <div class="col-3">
             <div class="card">
               <div class="d-flex align-items-center justify-content-center">
-                <i class="fas fa-sun fa-3x text-warning mt-2"></i>
+                <i class="fourthDay mt-2"></i>
               </div>
               <div class="card-body">
-                <h4 class="card-title text-center notable">Fri</h4>
-                <h5 class="shoulders text-center">16°C</h5>
+                <h4 class="card-title text-center notable fourthName">Fri</h4>
+                <h5 class="shoulders text-center fourthTemp">16°C</h5>
               </div>
             </div>
           </div>
         </div>
         <input type="text" placeholder="Please Enter A City Name" />
+        <button class="btn btn-primary mx-auto d-block searchButton">
+          Search
+        </button>
       </div>
     </div>
     <script src="bundle.js"></script>
