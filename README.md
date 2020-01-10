@@ -39,8 +39,16 @@ In this project, I worked on a project called Weather App using react. There wer
 
 > Clone the repository to your local machine
 
+<<<<<<< HEAD
 ```sh
 $ git clone https://github.com/YemreAybey/Weather-App.git
+=======
+To get started with the app, clone the repo 
+or just go here ==> [WeatherApp](https://yemreaybey.github.io/Weather-App/)
+
+```
+git clone => The SSH key or URL <=
+>>>>>>> 1415f90de8641a36371e30891c4f801f2eabc89a
 ```
 
 > cd into the directory, install dependencies, build and start
