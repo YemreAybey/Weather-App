@@ -23,7 +23,7 @@
 
 This project is part of a series of projects to be completed by students of [Microverse](https://www.microverse.org/ "The Global School for Remote Software Developers!").
 
-In this project, I worked on a project called Weather App using react. There were no milestones but requirements. You can make a search for any city you like. I am using the openweather API.
+In this project, I worked on a project called Weather App using react. There were no milestones but requirements. You can search for any city you like. The app will return the temperature, weather report, humidity, and wind speed for the city, and will additionally give you a 5-day forecast.
 
 ## Built With
 
